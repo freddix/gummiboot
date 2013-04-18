@@ -1,11 +1,11 @@
 Summary:	Simple text-mode UEFI Boot Manager
 Name:		gummiboot
-Version:	29
+Version:	30
 Release:	1
 License:	LGPL
 Group:		Applications/System
 Source0:	http://cgit.freedesktop.org/gummiboot/snapshot/%{name}-%{version}.tar.gz
-# Source0-md5:	cb27657f352b75b82466178f218b4628
+# Source0-md5:	8ced08953ece1ad97fb42a0968fbb439
 URL:		http://freedesktop.org/wiki/Software/gummiboot
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -31,13 +31,15 @@ Simple UEFI boot manager.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+/usr/bin/gummiboot update >/dev/null 2>&1 || :
 
 %files
 %defattr(644,root,root,755)
