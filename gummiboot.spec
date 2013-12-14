@@ -1,11 +1,11 @@
 Summary:	Simple text-mode UEFI Boot Manager
 Name:		gummiboot
-Version:	38
+Version:	39
 Release:	1
 License:	LGPL
 Group:		Applications/System
 Source0:	http://cgit.freedesktop.org/gummiboot/snapshot/%{name}-%{version}.tar.gz
-# Source0-md5:	31d0989c1f25eaf2a6ed1ea5bd620cf1
+# Source0-md5:	36cb42f3cb591be4010a6192445dbde2
 URL:		http://freedesktop.org/wiki/Software/gummiboot
 BuildRequires:	autoconf
 BuildRequires:	automake
